@@ -19,7 +19,7 @@ A production-ready Java 21 REST microservice that continuously calculates the ru
 
 ```bash
 # 1. Clone the repository
-
+gh repo clone jimonreal/tasktracker
 
 # 2. Build and start both services (app + postgres)
 docker compose up --build
