@@ -1,5 +1,5 @@
 # ── Stage 1: build ──────────────────────────────────────────────────────────
-FROM eclipse-temurin:26-jdk-alpine AS build
+FROM eclipse-temurin:21-jdk-alpine AS build
 
 WORKDIR /workspace
 
@@ -10,7 +10,7 @@ RUN apk add --no-cache maven && \
     mvn -q -B package -DskipTests
 
 # ── Stage 2: runtime ────────────────────────────────────────────────────────
-FROM eclipse-temurin:26-jre-alpine
+FROM eclipse-temurin:21-jre-alpine
 
 RUN addgroup -S tasktracker && adduser -S tasktracker -G tasktracker
 USER tasktracker
